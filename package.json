@@ -9,9 +9,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@solidjs/router": "^0.8.2",
+    "daisyui": "^3.2.1",
+    "pdf-merger-js": "^4.3.0",
     "solid-js": "^1.7.7"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.26",
+    "tailwindcss": "^3.3.3",
     "typescript": "^5.0.2",
     "vite": "^4.4.0",
     "vite-plugin-solid": "^2.7.0"
