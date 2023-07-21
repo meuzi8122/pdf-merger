@@ -1,5 +1,7 @@
-import Hero from "../components/hero";
+import { A } from "@solidjs/router";
+import { Show } from "solid-js";
 import Uploader from "../components/shared/uploader";
+import Hero from "../hero/hero-1";
 import { files, updateFiles } from "../states/file";
 import { name, updateName } from "../states/name";
 import { JSXInputElementEvent } from "../types/event";
@@ -45,12 +47,11 @@ export default () => {
                         <span>.pdf</span>
                     </label>
                 </div>
-                {/* <div class="form-control">
-                    <label class="label">
-                        <span class="label-text">結合する順番に半角スペース区切りでファイル名を入力(任意・拡張子省略可)</span>
-                    </label>
-                    <input type="text" class="input input-bordered w-full max-w-xs" />
-                </div> */}
+                <Show when={files.length > 1}>
+                    <div class="form-control mt-2">
+                        <A href="/order" class="link">PDFを並び変える</A>
+                    </div>
+                </Show>
                 <div class="form-control mt-6">
                     <button type="button" class="btn btn-primary" onClick={handleSubmit} disabled={files.length === 0 || name() === ""}>PDFを結合</button>
                 </div>
