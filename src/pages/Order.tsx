@@ -1,8 +1,8 @@
 import { A } from "@solidjs/router";
 import { For } from "solid-js";
+import Hero from "../components/hero/hero-2";
 import ArrowDown from "../components/icon/arrow-down";
 import ArrowUp from "../components/icon/arrow-up";
-import Hero from "../hero/hero-2";
 import { files, reorderFiles } from "../states/file";
 
 export default () => {

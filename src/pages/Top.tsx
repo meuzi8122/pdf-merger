@@ -1,7 +1,7 @@
 import { A } from "@solidjs/router";
 import { Show } from "solid-js";
+import Hero from "../components/hero/hero-1";
 import Uploader from "../components/shared/uploader";
-import Hero from "../hero/hero-1";
 import { files, updateFiles } from "../states/file";
 import { name, updateName } from "../states/name";
 import { JSXInputElementEvent } from "../types/event";
