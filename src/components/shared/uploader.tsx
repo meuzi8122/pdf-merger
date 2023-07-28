@@ -1,4 +1,5 @@
 type Props = {
+    //files: File[];
     multiple: boolean;
     handleFilesChange: any;
 }

@@ -4,12 +4,16 @@ import Hero from "../components/hero/hero-1";
 import Uploader from "../components/shared/uploader";
 import { files, updateFiles } from "../states/file";
 import { name, updateName } from "../states/name";
-import { JSXInputElementEvent } from "../types/event";
+import type { JSXInputElementEvent } from "../types/event";
 import { PDFUtil } from "../utils/pdf";
 
 export default () => {
     const handleNameInput: JSXInputElementEvent = (event) => {
         updateName(event.currentTarget.value);
+    }
+
+    const handleResetButtonClick = () => {
+        updateFiles([]);
     }
 
     /* TODO: 型が合っているか確認(ChangeEvent) */
@@ -37,7 +41,11 @@ export default () => {
     return (
         <Hero>
             <div class="card-body">
-                <Uploader multiple={true} handleFilesChange={handleFilesChange} />
+                <Show when={files.length > 0} fallback={<Uploader multiple={true} handleFilesChange={handleFilesChange} />}>
+                    <div class="form-control w-full">
+                        <button class="btn btn-secondary" onClick={handleResetButtonClick}>ファイルを再選択({files.length}ファイルが選択されています)</button>
+                    </div>
+                </Show>
                 <div class="form-control">
                     <label class="label">
                         <span class="label-text">結合後のファイル名を入力</span>
